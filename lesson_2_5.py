@@ -13,34 +13,15 @@ data_inp = int(input("Введите оценку от 1 до 9: "))
 search_value = 0
 search_value_sm = 0
 
-if data_inp in data:
+if search_value > 0:
     search_value = data.index(data_inp)
     print(search_value)
-    search_value_sm = data.index(data_inp - 1)
-    if search_value_sm != data.index(data_inp - 1):
-        search_value_sm = data.index(data_inp - 2)
-        if search_value_sm != data.index(data_inp - 2):
-           search_value_sm = data.index(data_inp - 3)
-           if search_value_sm != data.index(data_inp - 3):
-              search_value_sm = data.index(data_inp - 4)
-              if search_value_sm != data.index(data_inp - 4):
-                 search_value_sm = data.index(data_inp - 5)
-                 if search_value_sm != data.index(data_inp - 5):
-                    search_value_sm = data.index(data_inp - 6)
-                    if search_value_sm != data.index(data_inp - 6):
-                       search_value_sm = data.index(data_inp - 7)
-                       if search_value_sm != data.index(data_inp - 7):
-                          search_value_sm = data.index(data_inp - 8)
+    search_value_sm = search_value + 1
     print(search_value_sm)
+    data.insert(search_value_sm, data_inp)
+    print(data)
 else:
-    print("Такого значения нет")
-
-
-
-
-# while
-
-# data.insert(x, data_inp)
-# print(data)
-#
-# print(data.index(data_inp, data_inp))
+    data.append(data_inp)
+    data.sort()
+    data.reverse()
+    print(data)
